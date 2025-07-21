@@ -7,7 +7,9 @@ async function bootstrap() {
   app.setGlobalPrefix("api")
 
   app.enableCors({
-    origin:['http:localhost:3000', 'http://87.228.88.172:3000']
+    origin:['http:localhost:3000', 'http://87.228.88.172:3000'],
+    credentials: true,
+    exposedHeaders: 'set-cookie'
   })
   await app.listen(process.env.PORT ?? 4200);
 }
